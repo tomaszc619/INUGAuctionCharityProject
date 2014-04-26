@@ -25,6 +25,6 @@ if (isset($_COOKIE['WEBID_RM_ID']))
 	setcookie('WEBID_RM_ID', '', time() - 3600);
 }
 
-header('location: index.php');
+header('location: thankyoupage.php');
 exit;
 ?>

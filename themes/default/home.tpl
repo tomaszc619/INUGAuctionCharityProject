@@ -101,7 +101,7 @@
             <table width="100%">
             <tr>
                 <td width="25%"><label for="username" title="please enter your username">{L_003}</label></td>
-                <td width="75%"><input type="text" name="username" id="username" size="10" maxlength="20"></td>
+                <td width="75%"><input type="text" name="username" id="username" size="10" maxlength="50"></td>
             </tr>
             <tr>
                 <td width="25%"><label for="password" title="please enter your password">{L_004}&nbsp;</label></td>

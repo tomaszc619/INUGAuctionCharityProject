@@ -132,18 +132,18 @@ $missing = array();
 $missing['birthday'] = $missing['address'] = $missing['city'] = $missing['prov'] = $missing['country'] = $missing['zip'] = $missing['tel'] = $missing['paypal'] = $missing['authnet'] = $missing['worldpay'] = $missing['toocheckout'] = $missing['moneybookers'] = $missing['name'] = $missing['nick'] = $missing['password'] = $missing['repeat_password'] = $missing['email'] = false;
 if (isset($_POST['action']) && $_POST['action'] == 'first')
 {
-	if (!isset($_POST['terms_check']))
+	/*if (!isset($_POST['terms_check']))
 	{
 		$ERR = $ERR_078;
-	}
+	}*/
 	if (empty($_POST['TPL_name']))
 	{
 		$missing['name'] = true;
 	}
-	if (empty($_POST['TPL_nick']))
+	/*if (empty($_POST['TPL_nick']))
 	{
 		$missing['nick'] = true;
-	}
+	}*/
 	if (empty($_POST['TPL_password']))
 	{
 		$missing['password'] = true;
@@ -228,10 +228,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'first')
 		{
 			$ERR = $MSG['752'];
 		}
-		elseif (strlen($_POST['TPL_nick']) < 6)
+		/*elseif (strlen($_POST['TPL_nick']) < 6)
 		{
 			$ERR = $ERR_107;
-		}
+		}*/
 		elseif (strlen ($_POST['TPL_password']) < 6)
 		{
 			$ERR = $ERR_108;
@@ -264,6 +264,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'first')
 			if (mysql_num_rows($res) > 0)
 			{
 				$ERR = $ERR_111; // Selected user already exists
+				header( 'Location: auto_login.php?username='.$system->cleanvars($_POST['TPL_email']) ) ;
 			}
 			$query = "SELECT email FROM " . $DBPrefix . "users WHERE email = '" . $system->cleanvars($_POST['TPL_email']) . "'";
 			$res = mysql_query($query);
@@ -271,11 +272,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'first')
 			if (mysql_num_rows($res) > 0)
 			{
 				$ERR = $ERR_115; // E-mail already used
+				header( 'Location: auto_login.php?username='.$system->cleanvars($_POST['TPL_email']) ) ;
 			}
 
 			if (!isset($ERR))
 			{
-				$TPL_nick_hidden = $_POST['TPL_nick'];
+				$TPL_nick_hidden = $_POST['TPL_email'];
 				$TPL_password_hidden = $_POST['TPL_password'];
 				$TPL_name_hidden = $_POST['TPL_name'];
 				$TPL_email_hidden = $_POST['TPL_email'];
@@ -332,7 +334,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'first')
 						'" . ((!empty($DATE)) ? $DATE : 0) . "',
 						'" . $SUSPENDED . "',
 						'" . $language . "',
-						'" . implode(',', $groups) . "',
+						'2',
 						'" . $balance . "',
 						" . intval($_POST['TPL_timezone']) . ",
 						'" . ((isset($_POST['TPL_pp_email'])) ? $system->cleanvars($_POST['TPL_pp_email']) : '') . "',
@@ -348,6 +350,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'first')
 				$system->check_mysql(mysql_query($query), $query, __LINE__, __FILE__);
 
 				$_SESSION['language'] = $language;
+				
+				//REDIRECT TO LOGINPAGE
+				header( 'Location: auto_login.php?username='.$system->cleanvars($_POST['TPL_email']) ) ;				
+				
 				$first = false;
 
 				if (defined('TrackUserIPs'))
@@ -507,7 +513,7 @@ $template->assign_vars(array(
 		'V_YNEWSL' => ((isset($_POST['TPL_nletter']) && $_POST['TPL_nletter'] == 1) || !isset($_POST['TPL_nletter'])) ? 'checked=true' : '',
 		'V_NNEWSL' => (isset($_POST['TPL_nletter']) && $_POST['TPL_nletter'] == 2) ? 'checked=true' : '',
 		'V_YNAME' => (isset($_POST['TPL_name'])) ? $_POST['TPL_name'] : '',
-		'V_UNAME' => (isset($_POST['TPL_nick'])) ? $_POST['TPL_nick'] : '',
+		'V_UNAME' => (isset($_POST['TPL_email'])) ? $_POST['TPL_email'] : '',
 		'V_EMAIL' => (isset($_POST['TPL_email'])) ? $_POST['TPL_email'] : '',
 		'V_YEAR' => (isset($_POST['TPL_year'])) ? $_POST['TPL_year'] : '',
 		'V_ADDRE' => (isset($_POST['TPL_address'])) ? $_POST['TPL_address'] : '',

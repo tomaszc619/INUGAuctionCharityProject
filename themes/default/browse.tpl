@@ -1,45 +1,22 @@
-<!-- IF B_FEATURED_ITEMS -->
-	<table width="99%" border="0" cellspacing="1" cellpadding="4">
-    <!-- BEGIN featured_items -->
-		<tr align="center">
-			<td align="center" width="15%">
-				<a href="{SITEURL}item.php?id={featured_items.ID}"><img src="{featured_items.IMAGE}" border="0"></a>
-			</td>
-			<td align="left"<!-- IF featured_items.B_BOLD --> style="font-weight: bold;"<!-- ENDIF -->>
-                <a href="{SITEURL}item.php?id={featured_items.ID}" class="bigfont">{featured_items.TITLE}</a>
-				<!-- IF B_SUBTITLE && featured_items.SUBTITLE ne '' --><p class="smallspan">{featured_items.SUBTITLE}</p><!-- ENDIF -->
-				<p>{L_949} {featured_items.CLOSES}</p>
-			</td>
-			<td align="center" width="15%">
-	<!-- IF featured_items.BUY_NOW neq '' -->
-				<span class="redfont bigfont">{featured_items.BUY_NOW}</span>
-	<!-- ELSE -->
-				<span class="grayfont">{L_951}</span>
-	<!-- ENDIF -->
-			</td>
-			<td align="center" width="15%">
-				<span class="bigfont">{featured_items.BIDFORM}</span>
-				<p class="smallspan">{featured_items.NUMBIDS}</p>
-			</td>
-		</tr>
-    <!-- END featured_items -->
-	</table>
-    <br class="spacer">
-<!-- ENDIF -->
+
     <form method="post" action="/url">
 	<table width="99%" border="0" cellspacing="1" cellpadding="4">
 <!-- BEGIN items -->
-		<tr align="center" {items.ROWCOLOUR}>
+		<tr align="center" >
 			<td align="center" width="15%">
 				<a href="{SITEURL}item.php?id={items.ID}"><img src="{items.IMAGE}" border="0"></a>
 			</td>
 			<td align="left"<!-- IF items.B_BOLD --> style="font-weight: bold;"<!-- ENDIF -->>
-                <a href="{SITEURL}item.php?id={items.ID}" class="bigfont">{items.TITLE}</a>
-				<!-- IF B_SUBTITLE && items.SUBTITLE ne '' --><p class="smallspan">{items.SUBTITLE}</p><!-- ENDIF -->
+                <a href="{SITEURL}item.php?id={items.ID}" class="bigfont">{items.TITLE}{items.ID}</a>
+				<!-- IF B_SUBTITLE && items.SUBTITLE ne '' --><p class="smallspan">Retail price; {items.SUBTITLE}</p><!-- ENDIF -->
 				<p>{L_949} {items.CLOSES}</p>
+
 			</td>
             <td>
                 <input id="biditem_{items.ID}" maxlength="8" />
+            </td>
+            <td>
+                <p>{items.DESCRIPTION}</p>
             </td>
 			<td align="center" width="15%">
 	<!-- IF items.BUY_NOW neq '' -->

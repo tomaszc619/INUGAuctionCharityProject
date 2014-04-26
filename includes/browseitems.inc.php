@@ -73,6 +73,8 @@ function browseItems($result, $feat_res, $total, $current_page, $extravar = '')
 			'CLOSES' => ArrangeDateNoCorrection($row['ends']),
 			'NUMBIDS' => sprintf($MSG['950'], $row['num_bids']),
 
+            'DESCRIPTION' => $row['description'],
+
 			'B_BOLD' => ($row['bold'] == 'y')
 		));
 		$k++;

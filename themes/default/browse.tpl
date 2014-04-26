@@ -26,7 +26,7 @@
 	</table>
     <br class="spacer">
 <!-- ENDIF -->
-
+    <form method="post" action="/url">
 	<table width="99%" border="0" cellspacing="1" cellpadding="4">
 <!-- BEGIN items -->
 		<tr align="center" {items.ROWCOLOUR}>
@@ -38,6 +38,9 @@
 				<!-- IF B_SUBTITLE && items.SUBTITLE ne '' --><p class="smallspan">{items.SUBTITLE}</p><!-- ENDIF -->
 				<p>{L_949} {items.CLOSES}</p>
 			</td>
+            <td>
+                <input id="biditem_{items.ID}" maxlength="8" />
+            </td>
 			<td align="center" width="15%">
 	<!-- IF items.BUY_NOW neq '' -->
 				<span class="redfont bigfont">{items.BUY_NOW}</span>
@@ -55,6 +58,7 @@
 			<td colspan="4">{NUM_AUCTIONS}</td>
 		</tr>
 	</table>
+    </form>
 	<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td align="center">

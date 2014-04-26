@@ -243,7 +243,8 @@ $template->assign_vars(array(
 		'B_LOGIN_BOX' => ($system->SETTINGS['loginbox'] == 1),
 		'B_NEWS_BOX' => ($system->SETTINGS['newsbox'] == 1)
 		));
-
+header('location: register.php');
+exit;
 include 'header.php';
 $template->set_filenames(array(
 		'body' => 'home.tpl'

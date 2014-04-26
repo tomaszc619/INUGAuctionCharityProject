@@ -105,7 +105,8 @@ if(isset($_GET['username']))
 				$URL = 'user_menu.php';
 			}
 
-			header('location: ' . $URL);
+			header('location: browse.php');
+			//header('location: ' . $URL);
 			exit;
 		}
 	}

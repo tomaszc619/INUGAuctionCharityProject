@@ -4,21 +4,22 @@
     <form name="registration" action="{SSLURL}register.php" method="post">
         <div>
             <label class="form-label">Name</label>
-            <input type="text" name="TPL_name" <!-- IF MISSING0 eq 1 -->class="missing"<!-- ENDIF --> size=40 maxlength=255 value="{V_YNAME}" autofocus>
+            <input class="form-control" type="text" name="TPL_name" <!-- IF MISSING0 eq 1 -->class="missing"<!-- ENDIF --> size=40 maxlength=255 value="{V_YNAME}" autofocus>
             <!-- IF MISSING0 eq 1 --><div class="error-box missing">{L_937}</div><!-- ENDIF -->
             <label class="form-label">E-mail</label>
-            <input type="email" name="TPL_email" size=50 maxlength=50 value="{V_EMAIL}" <!-- IF MISSING4 eq 1 -->class="missing"<!-- ENDIF -->>
+            <input class="form-control" type="email" name="TPL_email" size=50 maxlength=50 value="{V_EMAIL}" <!-- IF MISSING4 eq 1 -->class="missing"<!-- ENDIF -->>
             <!-- IF MISSING4 eq 1 --><div class="error-box missing">{L_941}</div><!-- ENDIF -->
             <!-- IF TEL -->
             <label class="form-label">Phone number</label>
-            <input type="text" name="TPL_phone" size=40 maxlength=40 value="{V_PHONE}" <!-- IF MISSING11 eq 1 -->class="missing"<!-- ENDIF -->>
+            <input class="form-control" type="text" name="TPL_phone" size=40 maxlength=40 value="{V_PHONE}" <!-- IF MISSING11 eq 1 -->class="missing"<!-- ENDIF -->>
             <!-- IF MISSING11 eq 1 --><div class="error-box missing">{L_947}</div><!-- ENDIF -->
 
             <!-- ENDIF -->
         </div>
         <div style="text-align:center">
             <input type="hidden" name="action" value="first">
-            <input type="submit" name="" value="Go -->" class="button">
+            <input style="margin-top:15px;" class="btn btn-primary" type="submit" name="" value="Next" class="button">
+            
         </div>
     </form>
 

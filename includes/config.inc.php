@@ -1,9 +1,9 @@
 <?php
-$DbHost	 = "localhost";
-$DbDatabase = "igog";
-$DbUser	 = "root";
-$DbPassword = "";
-$DBPrefix	= "webid_";
-$main_path	= "C:\\Sites\\IGOG\\";
-$MD5_PREFIX = "e37ba96278a50b3cd49e2fa43e5be578";
-?>
+ $DbHost	 = "localhost";
+ $DbDatabase = "inugwebid";
+ $DbUser	 = "admin";
+ $DbPassword = "password";
+ $DBPrefix	= "webid_";
+ $main_path	= "C:\\xampp\\htdocs\\INUGAuctionCharityProject\\";
+ $MD5_PREFIX = "bc8d3ab0ac94ee533c819cd5051057d9";
+ ?>

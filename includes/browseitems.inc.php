@@ -60,7 +60,6 @@ function browseItems($result, $feat_res, $total, $current_page, $extravar = '')
 		// time left till the end of this auction 
 		$difference = $row['ends'] - time();
 		$bgcolour = ($k % 2) ? 'bgcolor="#FFFEEE"' : '';
-
 		$template->assign_block_vars('items', array(
 			'ID' => $row['id'],
 			'ROWCOLOUR' => ($row['highlighted'] == 'y') ? 'bgcolor="#fea100"' : $bgcolour,
@@ -75,6 +74,8 @@ function browseItems($result, $feat_res, $total, $current_page, $extravar = '')
 			'NUMBIDS' => sprintf($MSG['950'], $row['num_bids']),
 
             'DESCRIPTION' => $row['description'],
+            'MINIMUN_BID' => $row['minimum_bid'],
+
 
 			'B_BOLD' => ($row['bold'] == 'y')
 		));

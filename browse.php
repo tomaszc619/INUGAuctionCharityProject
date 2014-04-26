@@ -239,7 +239,7 @@ $auction_data = mysql_fetch_assoc($result);*/
 
 include 'header.php';
 $template->set_filenames(array(
-		'body' => 'browsecats.tpl'
+		'body' => 'browse.tpl'
 		));
 $template->display('body');
 include 'footer.php';

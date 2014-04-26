@@ -1,4 +1,4 @@
-    <form method="post" action="confirmation_items.php">
+	<form method="post" action="confirmation_items.php">
 	<table width="99%" border="0" cellspacing="1" cellpadding="4">
 <!-- BEGIN items -->
 		<tr align="center" >

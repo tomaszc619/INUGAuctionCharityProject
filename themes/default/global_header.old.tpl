@@ -8,12 +8,8 @@
 <meta name="generator" content="WeBid">
 
 <link rel="stylesheet" type="text/css" href="{INCURL}themes/{THEME}/style.css">
-<link rel="stylesheet" type="text/css" href="{INCURL}themes/{THEME}/css/style.css">
 <link rel="stylesheet" type="text/css" href="{INCURL}themes/{THEME}/jquery.lightbox.css" media="screen">
 <link rel="stylesheet" type="text/css" href="{INCURL}inc/calendar.css">
-<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <link rel="alternate" type="application/rss+xml" title="{L_924}" href="{SITEURL}rss.php?feed=1">
 <link rel="alternate" type="application/rss+xml" title="{L_925}" href="{SITEURL}rss.php?feed=2">
@@ -56,3 +52,45 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<div class="wrapper rounded-top rounded-bottom">
+	<div class="splitbox">
+    	<div class="leftside">
+        	{LOGO}
+        </div>
+    	<div class="rightside">
+        	{BANNER}
+        </div>
+    </div>
+	<div class="counters">
+        <span class="leftside"><!-- IF B_LOGGED_IN -->{L_200} {YOURUSERNAME}. <a href="{SSLURL}logout.php?">{L_245}</a><!-- ENDIF --></span>
+        <span class="rightside">{HEADERCOUNTER}</span>
+	</div>
+    <div class="navbar">
+        <ul>
+            <li><a href="{SITEURL}index.php?">{L_166}</a></li>
+<!-- IF B_CAN_SELL -->
+			<li><a href="{SITEURL}select_category.php?">{L_028}</a></li>
+<!-- ENDIF -->
+<!-- IF B_LOGGED_IN -->
+            <li><a href="{SITEURL}user_menu.php?">{L_622}</a></li>
+            <li><a href="{SSLURL}logout.php?">{L_245}</a></li>
+<!-- ELSE -->
+            <li><a href="{SSLURL}register.php?">{L_235}</a></li>
+            <li><a href="{SSLURL}user_login.php?">{L_052}</a></li>
+<!-- ENDIF -->
+<!-- IF B_BOARDS -->
+			<li><a href="{SITEURL}boards.php">{L_5030}</a></li>
+<!-- ENDIF -->
+            <li><a href="{SITEURL}help.php" alt="faqs" class="new-window">{L_148}</a></li>
+        </ul>
+    </div>
+	<div class="navbar">
+    	<div>
+            <form name="search" action="{SITEURL}search.php" method="get">
+                {SELECTION_BOX}
+                <input type="search" name="q" size="50" value="{Q}" placeholder="{L_861}">
+                <input type="submit" name="sub" value="{L_399}" class="button">
+                <a href="{SITEURL}adsearch.php">{L_464}</a>
+            </form>
+		</div>
+    </div>

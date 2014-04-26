@@ -1,17 +1,29 @@
-	<form method="post" action="confirmation_items.php">
-	<button type="submit" class="btn btn-default bid-button">Bid</button>
+<!doctype html>
+<html>
+  
+  <head>
+    <title>New Page</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+	<button type="button" class="btn btn-default bid-button">Bid</button>
     <div class="container">
-      <img src="{INCURL}themes/{THEME}/img/Ingenjorer_utan_granser_logo.png">
+      <img src="images/Ingenjorer_utan_granser_logo.png">
     </div>
     <div class="container">
       <div class="container">
         <div class="row">
-		<!-- BEGIN items -->
+		<?php for ($i = 1; $i <= 30; $i++): ?>
           <div class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="row">
               <div class="col-xs-3 col-md-3">
 				<div class="row">
-					<img src="{items.IMAGE}" style="max-width:100%">
+					<img src="https://builder.divshot.com/img/placeholder-100x100.gif" style="max-width:100%">
 				</div>
 				<div class="row">
 					<a href="#" class="" data-toggle="modal" data-target="#myModal">
@@ -22,13 +34,13 @@
               <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="text">{items.TITLE}
+                    <div class="text">Heading for the item being auctioned
                     </div>
                   </div>
                 </div>
 				<div class="row">
 					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <div class="text">ID: {items.ID}</div>
+                    <div class="text">ID: <?= $i ?></div>
                   </div>
 				</div>
                 <div class="row">
@@ -37,7 +49,7 @@
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <div class="text">{items.MINIMUN_BID}
+                    <div class="text">100kr
                     </div>
                   </div>
                 </div>
@@ -48,13 +60,13 @@
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <input name="biditem_{items.ID}" type="text" class="form-control">
+                    <input type="text" class="form-control">
                   </div>
                 </div>
               </div>
             </div>
           </div>
-		  <!-- END items -->
+		  <?php endfor ?>
 
 		</div>
       </div>
@@ -73,13 +85,13 @@
 			<div class="row">
 				  <div class="col-xs-3 col-md-3">
 					<div class="row">
-						<img src="{items.IMAGE}" style="max-width:100%">
+						<img src="images/Ingenjorer_utan_granser_logo.png" style="max-width:100%">
 					</div>
 				  </div>
 				  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 					<div class="row">
 						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						<div class="text">ID: {items.ID}</div>
+						<div class="text">ID: <?= $i ?></div>
 					  </div>
 					</div>
 					<div class="row">
@@ -88,7 +100,7 @@
 						</div>
 					  </div>
 					  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-						<div class="text">{items.MINIMUN_BID}
+						<div class="text">100kr
 						</div>
 					  </div>
 					</div>
@@ -99,14 +111,14 @@
 						</div>
 					  </div>
 					  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-						<div class="text">{items.SUBTITLE}
+						<div class="text">2000kr
 						</div>
 					  </div>
 					</div>
 				  </div>
 			  </div>
 			<div class="row">
-			{items.DESCRIPTION}
+			Beskrivning
 			</div>
 		 
       </div>
@@ -116,4 +128,6 @@
     </div>
   </div>
 </div>
-</form>
+  </body>
+
+</html>

@@ -16,7 +16,7 @@
 					<img src="{items.IMAGE}" style="max-width:100%">
 				</div>
 				<div class="row">
-					<a href="#" class="" data-toggle="modal" data-target="#myModal">
+					<a href="#" class="" data-toggle="modal" data-target="#myModal_{items.ID}">
 						More info
 					</a>
 				</div>
@@ -29,9 +29,13 @@
                   </div>
                 </div>
 				<div class="row">
-					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <div class="text">ID: {items.ID}</div>
-                  </div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<div class="text">ID:</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<div class="text">{items.ID}
+						</div>
+					</div>
 				</div>
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -56,19 +60,13 @@
               </div>
             </div>
           </div>
-		  <!-- END items -->
-
-		</div>
-      </div>
-      
-    </div>
-	
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  
+		  <div class="modal fade" id="myModal_{items.ID}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Heading for the item being auctioned</h4>
+        <h4 class="modal-title" id="myModalLabel">{items.TITLE}</h4>
       </div>
       <div class="modal-body">
 		  
@@ -80,9 +78,13 @@
 				  </div>
 				  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 					<div class="row">
-						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						<div class="text">ID: {items.ID}</div>
-					  </div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<div class="text">ID:</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<div class="text">{items.ID}
+						</div>
+					</div>
 					</div>
 					<div class="row">
 					  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -118,4 +120,12 @@
     </div>
   </div>
 </div>
+		  <!-- END items -->
+
+		</div>
+      </div>
+      
+    </div>
+	
+	
 </form>

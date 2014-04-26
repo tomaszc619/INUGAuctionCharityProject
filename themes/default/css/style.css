@@ -1,0 +1,13 @@
+.item {
+	margin-bottom: 20px;
+}
+.bid-button {
+	position: fixed;
+	right: 0;
+	margin: 10px;
+	z-index: 500;
+}
+
+.start-page {
+	max-width: 400px;
+}

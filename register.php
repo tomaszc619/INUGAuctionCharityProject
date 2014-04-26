@@ -144,14 +144,14 @@ if (isset($_POST['action']) && $_POST['action'] == 'first')
 	{
 		$missing['nick'] = true;
 	}*/
-	if (empty($_POST['TPL_password']))
+	/*if (empty($_POST['TPL_password']))
 	{
 		$missing['password'] = true;
 	}
 	if (empty($_POST['TPL_repeat_password']))
 	{
 		$missing['repeat_password'] = true;
-	}
+	}*/
 	if (empty($_POST['TPL_email']))
 	{
 		$missing['email'] = true;
@@ -232,14 +232,14 @@ if (isset($_POST['action']) && $_POST['action'] == 'first')
 		{
 			$ERR = $ERR_107;
 		}*/
-		elseif (strlen ($_POST['TPL_password']) < 6)
+		/*elseif (strlen ($_POST['TPL_password']) < 6)
 		{
 			$ERR = $ERR_108;
 		}
 		elseif ($_POST['TPL_password'] != $_POST['TPL_repeat_password'])
 		{
 			$ERR = $ERR_109;
-		}
+		}*/
 		elseif (strlen($_POST['TPL_email']) < 5)
 		{
 			$ERR = $ERR_110;
@@ -278,7 +278,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'first')
 			if (!isset($ERR))
 			{
 				$TPL_nick_hidden = $_POST['TPL_email'];
-				$TPL_password_hidden = $_POST['TPL_password'];
+				$TPL_password_hidden = 123456;
 				$TPL_name_hidden = $_POST['TPL_name'];
 				$TPL_email_hidden = $_POST['TPL_email'];
 				$SUSPENDED = ($system->SETTINGS['activationtype'] == 2) ? 0 : 8;

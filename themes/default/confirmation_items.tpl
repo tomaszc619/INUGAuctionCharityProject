@@ -1,4 +1,4 @@
-    <form method="post" action="confirmation_items.php">
+    <form method="post" action="send_bids.php">
 	<table width="99%" border="0" cellspacing="1" cellpadding="4">
 <!-- BEGIN items -->
 		<tr align="center" >
@@ -12,7 +12,7 @@
 
 			</td>
             <td>
-	                <input type="number" name="biditem_{items.ID}" maxlength="8" />
+	                <input type="number" name="biditem_{items.ID}" value="{items.BIDVALUE}" maxlength="8" />
             </td>
             <td>
                 <p>{items.DESCRIPTION}</p>

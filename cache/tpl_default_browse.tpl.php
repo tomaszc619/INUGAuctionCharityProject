@@ -1,5 +1,5 @@
-<button type="button" class="btn btn-default bid-button">Bid</button>
-	<form method="post" action="confirmation_items.php">
+<form method="post" action="confirmation_items.php">
+	<button type="submit" class="btn btn-default bid-button">Bid</button>
     <div class="container">
       <img src="<?php echo (isset($this->_rootref['INCURL'])) ? $this->_rootref['INCURL'] : ''; ?>themes/<?php echo (isset($this->_rootref['THEME'])) ? $this->_rootref['THEME'] : ''; ?>/img/Ingenjorer_utan_granser_logo.png">
     </div>
@@ -37,7 +37,7 @@
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <div class="text">100kr
+                    <div class="text"><?php echo $_items_val['MINIMUN_BID']; ?>
                     </div>
                   </div>
                 </div>
@@ -48,7 +48,7 @@
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <input type="text" class="form-control">
+                    <input name="biditem_<?php echo $_items_val['ID']; ?>" type="text" class="form-control">
                   </div>
                 </div>
               </div>
@@ -79,7 +79,7 @@
 				  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 					<div class="row">
 						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						<div class="text">ID: </div>
+						<div class="text">ID: <?php echo $_items_val['ID']; ?></div>
 					  </div>
 					</div>
 					<div class="row">
@@ -88,7 +88,7 @@
 						</div>
 					  </div>
 					  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-						<div class="text">100kr
+						<div class="text"><?php echo $_items_val['MINIMUN_BID']; ?>
 						</div>
 					  </div>
 					</div>
@@ -99,7 +99,7 @@
 						</div>
 					  </div>
 					  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-						<div class="text">2000kr
+						<div class="text"><?php echo $_items_val['SUBTITLE']; ?>
 						</div>
 					  </div>
 					</div>

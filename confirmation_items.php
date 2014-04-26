@@ -58,7 +58,7 @@ function build_items($row)
 }
 $k = 0;
 foreach ($_POST as $key => &$value) {
-	if(isset($value) && !empty($value) && is_numeric($value))
+	if(isset($value) && !empty($value) && is_numeric($value) && strpos($key,'biditem_') !== false)
 	{		
 		$idarray = explode ("biditem_", $key);
 		$itemId = $idarray[1];

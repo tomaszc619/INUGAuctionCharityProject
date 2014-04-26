@@ -1,6 +1,6 @@
 <div class="container start-page">
 
-    <img src="/images/Ingenjorer_utan_granser_logo.png">
+    <img src="/IGOG templates/images/Ingenjorer_utan_granser_logo.png">
     <form name="registration" action="{SSLURL}register.php" method="post">
         <div>
             <label class="form-label">Name</label>

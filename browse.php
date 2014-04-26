@@ -219,6 +219,24 @@ else
 			));
 }
 
+/*KOD TILL TOMASZ
+// get auction all needed data
+$query = "SELECT a.*, ac.counter, u.nick, u.reg_date, u.country, u.zip FROM " . $DBPrefix . "auctions a
+		LEFT JOIN " . $DBPrefix . "users u ON (u.id = a.user)
+		LEFT JOIN " . $DBPrefix . "auccounter ac ON (ac.auction_id = a.id)
+		WHERE a.id = " . 1 . " LIMIT 1";
+$result = mysql_query($query);
+$system->check_mysql($result, $query, __LINE__, __FILE__);
+if (mysql_num_rows($result) == 0)
+{
+    $_SESSION['msg_title'] = $ERR_622;
+    $_SESSION['msg_body'] = $ERR_623;
+    header('location: message.php');
+    exit;
+}
+$auction_data = mysql_fetch_assoc($result);*/
+
+
 include 'header.php';
 $template->set_filenames(array(
 		'body' => 'browsecats.tpl'

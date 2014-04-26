@@ -517,7 +517,7 @@ switch ($_SESSION['action'])
 		foreach ($payment_options as $k => $v)
 		{
 			$checked = (_in_array($k, $payment)) ? 'checked' : '';
-			$payment_methods .= '<p><input type="checkbox" name="payment[]" value="' . $k . '" ' . $checked . '>' . $v . '</p>';
+			$payment_methods .= '<p><input type="checkbox" name="payment[]" value="' . $k . '" ' . "checked" . '>' . $v . '</p>';
 		}
 
 		// make hour

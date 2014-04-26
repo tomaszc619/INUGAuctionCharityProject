@@ -66,6 +66,7 @@ function browseItems($result, $feat_res, $total, $current_page, $extravar = '')
 			'ROWCOLOUR' => ($row['highlighted'] == 'y') ? 'bgcolor="#fea100"' : $bgcolour,
 			'IMAGE' => $row['pict_url'],
 			'TITLE' => $row['title'],
+            //INUG Subtitle is retail price
 			'SUBTITLE' => $row['subtitle'],
 			'BUY_NOW' => ($difference < 0) ? '' : $row['buy_now'],
 			'BID' => $row['current_bid'],

@@ -1,63 +1,40 @@
-<!-- IF B_FEATURED_ITEMS -->
+
+    <form method="post" action="confirmation_items.php">
 	<table width="99%" border="0" cellspacing="1" cellpadding="4">
-    <!-- BEGIN featured_items -->
-		<tr align="center">
+<!-- BEGIN items -->
+		<tr align="center" >
 			<td align="center" width="15%">
-				<a href="{SITEURL}item.php?id={featured_items.ID}"><img src="{featured_items.IMAGE}" border="0"></a>
+				<a href="{SITEURL}item.php?id={items.ID}"><img src="{items.IMAGE}" border="0"></a>
 			</td>
-			<td align="left"<!-- IF featured_items.B_BOLD --> style="font-weight: bold;"<!-- ENDIF -->>
-                <a href="{SITEURL}item.php?id={featured_items.ID}" class="bigfont">{featured_items.TITLE}</a>
-				<!-- IF B_SUBTITLE && featured_items.SUBTITLE ne '' --><p class="smallspan">{featured_items.SUBTITLE}</p><!-- ENDIF -->
-				<p>{L_949} {featured_items.CLOSES}</p>
+			<td align="left"<!-- IF items.B_BOLD --> style="font-weight: bold;"<!-- ENDIF -->>
+                <a href="{SITEURL}item.php?id={items.ID}" class="bigfont">{items.TITLE}{items.ID}</a>
+				<!-- IF B_SUBTITLE && items.SUBTITLE ne '' --><p class="smallspan">Retail price; {items.SUBTITLE}</p><!-- ENDIF -->
+				<p>{L_949} {items.CLOSES}</p>
+
 			</td>
+            <td>
+	                <input type="number" name="biditem_{items.ID}" maxlength="8" />
+            </td>
+            <td>
+                <p>{items.DESCRIPTION}</p>
+            </td>
 			<td align="center" width="15%">
-	<!-- IF featured_items.BUY_NOW neq '' -->
-				<span class="redfont bigfont">{featured_items.BUY_NOW}</span>
+	<!-- IF items.BUY_NOW neq '' -->
+				<span class="redfont bigfont">{items.BUY_NOW}</span>
 	<!-- ELSE -->
 				<span class="grayfont">{L_951}</span>
 	<!-- ENDIF -->
 			</td>
 			<td align="center" width="15%">
-				<span class="bigfont">{featured_items.BIDFORM}</span>
-				<p class="smallspan">{featured_items.NUMBIDS}</p>
+				<span class="bigfont">{items.BIDFORM}</span>
+				<p class="smallspan">{items.NUMBIDS}</p>
 			</td>
 		</tr>
-    <!-- END featured_items -->
+<!-- END items -->
+		<tr align="center">
+			<td colspan="4">{NUM_AUCTIONS}</td>
+		</tr>
 	</table>
-    <br class="spacer">
-<!-- ENDIF -->
-    <form method="post" action="confirmation_items.php">
-		<table width="99%" border="0" cellspacing="1" cellpadding="4">
-	<!-- BEGIN items -->
-			<tr align="center" {items.ROWCOLOUR}>
-				<td align="center" width="15%">
-					<a href="{SITEURL}item.php?id={items.ID}"><img src="{items.IMAGE}" border="0"></a>
-				</td>
-				<td align="left"<!-- IF items.B_BOLD --> style="font-weight: bold;"<!-- ENDIF -->>
-	                <a href="{SITEURL}item.php?id={items.ID}" class="bigfont">{items.TITLE}</a>
-					<!-- IF B_SUBTITLE && items.SUBTITLE ne '' --><p class="smallspan">{items.SUBTITLE}</p><!-- ENDIF -->
-					<p>{L_949} {items.CLOSES}</p>
-				</td>
-	            <td>
-	                <input type="number" name="biditem_{items.ID}" maxlength="8" />
-	            </td>
-				<td align="center" width="15%">
-		<!-- IF items.BUY_NOW neq '' -->
-					<span class="redfont bigfont">{items.BUY_NOW}</span>
-		<!-- ELSE -->
-					<span class="grayfont">{L_951}</span>
-		<!-- ENDIF -->
-				</td>
-				<td align="center" width="15%">
-					<span class="bigfont">{items.BIDFORM}</span>
-					<p class="smallspan">{items.NUMBIDS}</p>
-				</td>
-			</tr>
-	<!-- END items -->
-			<tr align="center">
-				<td colspan="4">{NUM_AUCTIONS}</td>
-			</tr>
-		</table>
 		<input type="submit"/>
     </form>
 	<table width="100%" cellpadding="0" cellspacing="0" border="0">

@@ -1,6 +1,8 @@
 <form method="post" action="confirmation_items.php">
-	<button type="submit" class="btn btn-default bid-button">Bid</button>
-    <div class="container">
+	<div class="bid-button-container ">
+	<button type="submit" class="btn btn-primary bid-button">Bid</button>
+    </div>
+	<div class="container">
       <img src="<?php echo (isset($this->_rootref['INCURL'])) ? $this->_rootref['INCURL'] : ''; ?>themes/<?php echo (isset($this->_rootref['THEME'])) ? $this->_rootref['THEME'] : ''; ?>/img/Ingenjorer_utan_granser_logo.png">
     </div>
     <div class="container">

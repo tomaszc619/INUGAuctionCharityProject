@@ -2,12 +2,20 @@
 	margin-bottom: 20px;
 }
 .bid-button {
-	position: fixed;
-	right: 0;
-	margin: 10px;
-	z-index: 500;
+	width: 100px;
+	color: #fff !important;
+	background-color: #383B47 !important;
+	border-color: #383B47 !important;
 }
 
 .start-page {
 	max-width: 400px;
+}
+.bid-button-container {
+	background: white;
+	position: fixed;
+	z-index: 500;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
 }

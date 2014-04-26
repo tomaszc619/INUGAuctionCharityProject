@@ -60,9 +60,14 @@ $template->assign_vars(array(
 		'B_LOGGED_IN' => $user->logged_in,
 		'B_BOARDS' => ($system->SETTINGS['boards'] == 'y')
 		));
-
+if($user->can_sell) {
+$template->set_filenames(array(
+		'header' => 'global_header.old.tpl'
+		));
+} else {
 $template->set_filenames(array(
 		'header' => 'global_header.tpl'
 		));
+}
 $template->display('header');
 ?>

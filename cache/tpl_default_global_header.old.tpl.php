@@ -8,12 +8,8 @@
 <meta name="generator" content="WeBid">
 
 <link rel="stylesheet" type="text/css" href="<?php echo (isset($this->_rootref['INCURL'])) ? $this->_rootref['INCURL'] : ''; ?>themes/<?php echo (isset($this->_rootref['THEME'])) ? $this->_rootref['THEME'] : ''; ?>/style.css">
-<link rel="stylesheet" type="text/css" href="<?php echo (isset($this->_rootref['INCURL'])) ? $this->_rootref['INCURL'] : ''; ?>themes/<?php echo (isset($this->_rootref['THEME'])) ? $this->_rootref['THEME'] : ''; ?>/css/style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo (isset($this->_rootref['INCURL'])) ? $this->_rootref['INCURL'] : ''; ?>themes/<?php echo (isset($this->_rootref['THEME'])) ? $this->_rootref['THEME'] : ''; ?>/jquery.lightbox.css" media="screen">
 <link rel="stylesheet" type="text/css" href="<?php echo (isset($this->_rootref['INCURL'])) ? $this->_rootref['INCURL'] : ''; ?>inc/calendar.css">
-<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <link rel="alternate" type="application/rss+xml" title="<?php echo ((isset($this->_rootref['L_924'])) ? $this->_rootref['L_924'] : ((isset($MSG['924'])) ? $MSG['924'] : '{ L_924 }')); ?>" href="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>rss.php?feed=1">
 <link rel="alternate" type="application/rss+xml" title="<?php echo ((isset($this->_rootref['L_925'])) ? $this->_rootref['L_925'] : ((isset($MSG['925'])) ? $MSG['925'] : '{ L_925 }')); ?>" href="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>rss.php?feed=2">
@@ -56,3 +52,43 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<div class="wrapper rounded-top rounded-bottom">
+	<div class="splitbox">
+    	<div class="leftside">
+        	<?php echo (isset($this->_rootref['LOGO'])) ? $this->_rootref['LOGO'] : ''; ?>
+        </div>
+    	<div class="rightside">
+        	<?php echo (isset($this->_rootref['BANNER'])) ? $this->_rootref['BANNER'] : ''; ?>
+        </div>
+    </div>
+	<div class="counters">
+        <span class="leftside"><?php if ($this->_rootref['B_LOGGED_IN']) {  echo ((isset($this->_rootref['L_200'])) ? $this->_rootref['L_200'] : ((isset($MSG['200'])) ? $MSG['200'] : '{ L_200 }')); ?> <?php echo (isset($this->_rootref['YOURUSERNAME'])) ? $this->_rootref['YOURUSERNAME'] : ''; ?>. <a href="<?php echo (isset($this->_rootref['SSLURL'])) ? $this->_rootref['SSLURL'] : ''; ?>logout.php?"><?php echo ((isset($this->_rootref['L_245'])) ? $this->_rootref['L_245'] : ((isset($MSG['245'])) ? $MSG['245'] : '{ L_245 }')); ?></a><?php } ?></span>
+        <span class="rightside"><?php echo (isset($this->_rootref['HEADERCOUNTER'])) ? $this->_rootref['HEADERCOUNTER'] : ''; ?></span>
+	</div>
+    <div class="navbar">
+        <ul>
+            <li><a href="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>index.php?"><?php echo ((isset($this->_rootref['L_166'])) ? $this->_rootref['L_166'] : ((isset($MSG['166'])) ? $MSG['166'] : '{ L_166 }')); ?></a></li>
+<?php if ($this->_rootref['B_CAN_SELL']) {  ?>
+			<li><a href="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>select_category.php?"><?php echo ((isset($this->_rootref['L_028'])) ? $this->_rootref['L_028'] : ((isset($MSG['028'])) ? $MSG['028'] : '{ L_028 }')); ?></a></li>
+<?php } if ($this->_rootref['B_LOGGED_IN']) {  ?>
+            <li><a href="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>user_menu.php?"><?php echo ((isset($this->_rootref['L_622'])) ? $this->_rootref['L_622'] : ((isset($MSG['622'])) ? $MSG['622'] : '{ L_622 }')); ?></a></li>
+            <li><a href="<?php echo (isset($this->_rootref['SSLURL'])) ? $this->_rootref['SSLURL'] : ''; ?>logout.php?"><?php echo ((isset($this->_rootref['L_245'])) ? $this->_rootref['L_245'] : ((isset($MSG['245'])) ? $MSG['245'] : '{ L_245 }')); ?></a></li>
+<?php } else { ?>
+            <li><a href="<?php echo (isset($this->_rootref['SSLURL'])) ? $this->_rootref['SSLURL'] : ''; ?>register.php?"><?php echo ((isset($this->_rootref['L_235'])) ? $this->_rootref['L_235'] : ((isset($MSG['235'])) ? $MSG['235'] : '{ L_235 }')); ?></a></li>
+            <li><a href="<?php echo (isset($this->_rootref['SSLURL'])) ? $this->_rootref['SSLURL'] : ''; ?>user_login.php?"><?php echo ((isset($this->_rootref['L_052'])) ? $this->_rootref['L_052'] : ((isset($MSG['052'])) ? $MSG['052'] : '{ L_052 }')); ?></a></li>
+<?php } if ($this->_rootref['B_BOARDS']) {  ?>
+			<li><a href="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>boards.php"><?php echo ((isset($this->_rootref['L_5030'])) ? $this->_rootref['L_5030'] : ((isset($MSG['5030'])) ? $MSG['5030'] : '{ L_5030 }')); ?></a></li>
+<?php } ?>
+            <li><a href="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>help.php" alt="faqs" class="new-window"><?php echo ((isset($this->_rootref['L_148'])) ? $this->_rootref['L_148'] : ((isset($MSG['148'])) ? $MSG['148'] : '{ L_148 }')); ?></a></li>
+        </ul>
+    </div>
+	<div class="navbar">
+    	<div>
+            <form name="search" action="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>search.php" method="get">
+                <?php echo (isset($this->_rootref['SELECTION_BOX'])) ? $this->_rootref['SELECTION_BOX'] : ''; ?>
+                <input type="search" name="q" size="50" value="<?php echo (isset($this->_rootref['Q'])) ? $this->_rootref['Q'] : ''; ?>" placeholder="<?php echo ((isset($this->_rootref['L_861'])) ? $this->_rootref['L_861'] : ((isset($MSG['861'])) ? $MSG['861'] : '{ L_861 }')); ?>">
+                <input type="submit" name="sub" value="<?php echo ((isset($this->_rootref['L_399'])) ? $this->_rootref['L_399'] : ((isset($MSG['399'])) ? $MSG['399'] : '{ L_399 }')); ?>" class="button">
+                <a href="<?php echo (isset($this->_rootref['SITEURL'])) ? $this->_rootref['SITEURL'] : ''; ?>adsearch.php"><?php echo ((isset($this->_rootref['L_464'])) ? $this->_rootref['L_464'] : ((isset($MSG['464'])) ? $MSG['464'] : '{ L_464 }')); ?></a>
+            </form>
+		</div>
+    </div>

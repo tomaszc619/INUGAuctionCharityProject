@@ -7,6 +7,7 @@
 <meta name="keywords" content="{KEYWORDS}">
 <meta name="generator" content="WeBid">
 
+<link rel="stylesheet" type="text/css" href="{INCURL}themes/{THEME}/style.css">
 <link rel="stylesheet" type="text/css" href="{INCURL}themes/{THEME}/css/style.css">
 <link rel="stylesheet" type="text/css" href="{INCURL}themes/{THEME}/jquery.lightbox.css" media="screen">
 <link rel="stylesheet" type="text/css" href="{INCURL}inc/calendar.css">

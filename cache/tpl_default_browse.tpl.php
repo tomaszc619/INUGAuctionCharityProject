@@ -1,16 +1,17 @@
 <button type="button" class="btn btn-default bid-button">Bid</button>
+	<form method="post" action="confirmation_items.php">
     <div class="container">
-      <img src="images/Ingenjorer_utan_granser_logo.png">
+      <img src="<?php echo (isset($this->_rootref['INCURL'])) ? $this->_rootref['INCURL'] : ''; ?>themes/<?php echo (isset($this->_rootref['THEME'])) ? $this->_rootref['THEME'] : ''; ?>/img/Ingenjorer_utan_granser_logo.png">
     </div>
     <div class="container">
       <div class="container">
         <div class="row">
-		
+		<?php $_items_count = (isset($this->_tpldata['items'])) ? sizeof($this->_tpldata['items']) : 0;if ($_items_count) {for ($_items_i = 0; $_items_i < $_items_count; ++$_items_i){$_items_val = &$this->_tpldata['items'][$_items_i]; ?>
           <div class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="row">
               <div class="col-xs-3 col-md-3">
 				<div class="row">
-					<img src="https://builder.divshot.com/img/placeholder-100x100.gif" style="max-width:100%">
+					<img src="<?php echo $_items_val['IMAGE']; ?>" style="max-width:100%">
 				</div>
 				<div class="row">
 					<a href="#" class="" data-toggle="modal" data-target="#myModal">
@@ -21,13 +22,13 @@
               <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="text">Heading for the item being auctioned
+                    <div class="text"><?php echo $_items_val['TITLE']; ?>
                     </div>
                   </div>
                 </div>
 				<div class="row">
 					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <div class="text">ID: </div>
+                    <div class="text">ID: <?php echo $_items_val['ID']; ?></div>
                   </div>
 				</div>
                 <div class="row">
@@ -53,7 +54,7 @@
               </div>
             </div>
           </div>
-		  
+		  <?php }} ?>
 
 		</div>
       </div>
@@ -72,7 +73,7 @@
 			<div class="row">
 				  <div class="col-xs-3 col-md-3">
 					<div class="row">
-						<img src="images/Ingenjorer_utan_granser_logo.png" style="max-width:100%">
+						<img src="<?php echo $_items_val['IMAGE']; ?>" style="max-width:100%">
 					</div>
 				  </div>
 				  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
@@ -105,7 +106,7 @@
 				  </div>
 			  </div>
 			<div class="row">
-			Beskrivning
+			<?php echo $_items_val['DESCRIPTION']; ?>
 			</div>
 		 
       </div>
@@ -115,3 +116,4 @@
     </div>
   </div>
 </div>
+</form>
